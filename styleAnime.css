@@ -1,0 +1,238 @@
+body {
+    background-color: #333;
+}
+/* Define o estilo para o container principal */
+.container {
+    width: 600px; /* Define a largura do container */
+    height: 850px; /* Define a altura do container */
+    perspective: 1000px; /* Define a perspectiva para os elementos filhos 3D */
+    margin: 20px; /* Define as margens externas do container */
+}
+
+/* Define o estilo para o cartão de login */
+.card {
+    width: 100%; /* Define a largura do cartão */
+    height: 100%; /* Define a altura do cartão */
+    margin: 50px auto; /* Define as margens automáticas para centralizar o cartão */
+    position: relative; /* Define a posição como relativa */
+    transform-style: preserve-3d; /* Mantém a transformação 3D dos elementos filhos */
+    transition: transform 0.5s; /* Adiciona uma transição suave para a rotação do cartão */
+    border-radius: 25px; /* Adiciona bordas arredondadas ao cartão */
+}
+
+/* Define o estilo para o cartão quando virado */
+.card.flipped {
+    transform: rotateY(180deg); /* Rotaciona o cartão 180 graus em torno do eixo Y */
+}
+
+/* Define o estilo para o lado do cartão */
+.side {
+    width: 100%; /* Define a largura do lado */
+    height: 100%; /* Define a altura do lado */
+    position: absolute; /* Define a posição como absoluta */
+    backface-visibility: hidden; /* Oculta a face traseira do cartão */
+    display: flex; /* Usa flexbox para alinhar elementos */
+    justify-content: center; /* Centraliza horizontalmente os elementos */
+    align-items: center; /* Centraliza verticalmente os elementos */
+    font-family: Arial, sans-serif; /* Define a fonte */
+    color: azure; /* Define a cor do texto */
+    border-radius: 25px; /* Adiciona bordas arredondadas */
+}
+
+/* Define o estilo para o lado frontal do cartão */
+.front {
+    background-color: transparent; /* Define a cor de fundo como transparente */
+    background-image: url('ab0b18d4-e528-4d09-8886-582b5484aae5.jpg'); /* Define a imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir todo o lado */
+    background-position: center; /* Centraliza a imagem */
+}
+
+/* Define o estilo para o lado traseiro do cartão */
+.back {
+    background-color: transparent; /* Define a cor de fundo como transparente */
+    transform: rotateY(180deg); /* Rotaciona o lado traseiro 180 graus em torno do eixo Y */
+    background-image: url('245e9542-21fa-4be0-843c-5f3211041b03.jpg'); /* Define a imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir todo o lado */
+    background-position: center; /* Centraliza a imagem */
+}
+
+/* Define o estilo para o botão de virar o cartão */
+.btn-flip {
+    position: absolute; /* Define a posição como absoluta */
+    bottom: 20px; /* Define a distância do fundo */
+    left: 50%; /* Define a distância da esquerda */
+    transform: translateX(-50%); /* Centraliza horizontalmente o botão */
+    padding: 10px 20px; /* Adiciona preenchimento ao botão */
+    background-color: #4CAF50; /* Define a cor de fundo do botão */
+    color: white; /* Define a cor do texto */
+    border: none; /* Remove a borda */
+    cursor: pointer; /* Define o cursor como ponteiro */
+    border-radius: 25px; /* Adiciona bordas arredondadas */
+    transition: background-color 0.3s; /* Adiciona uma transição suave */
+}
+
+/* Define o estilo para o botão de virar o cartão quando hover */
+.btn-flip:hover {
+    background-color: #45a049; /* Altera a cor de fundo do botão ao passar o mouse */
+}
+
+/* Define o estilo para os campos de entrada de texto */
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Define a largura para preencher todo o espaço disponível */
+    padding: 5px; /* Adiciona preenchimento interno */
+    margin-bottom: 25px; /* Adiciona espaço inferior */
+    border: solid transparent; /* Adiciona uma borda transparente */
+    border-radius: 25px; /* Adiciona bordas arredondadas */
+    box-sizing: border-box; /* Mantém a largura e altura incluindo a borda e o preenchimento */
+    background-color: rgba(255, 255, 255, 0.7); /* Define um fundo semi-transparente */
+    color: #333; /* Define a cor do texto */
+}
+
+/* Define o estilo para o botão de envio */
+button[id="login"] {
+    padding: 10px 20px; /* Adiciona preenchimento ao botão */
+    background-color: #4CAF50; /* Define a cor de fundo do botão */
+    color: white; /* Define a cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 25px; /* Adiciona bordas arredondadas */
+    cursor: pointer; /* Define o cursor como ponteiro */
+    transition: background-color 0.3s; /* Adiciona uma transição suave */
+}
+
+button[id="registrar"] {
+    padding: 20px 90px; /* Adiciona preenchimento ao botão */
+    background-color: #4CAF50; /* Define a cor de fundo do botão */
+    color: white; /* Define a cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 25px; /* Adiciona bordas arredondadas */
+    cursor: pointer; /* Define o cursor como ponteiro */
+    opacity: 0.3;/*Define a opacidade inicial*/
+    transition: opacity 0.3s, background-color 0.3s; /* Adiciona uma transição suave */
+}
+
+/* Define o estilo para o botão de envio quando hover */
+button[type="submit"]:hover {
+    background-color: #45a049; /* Altera a cor de fundo do botão ao passar o mouse */
+}
+button:hover {
+    opacity: 1;/*Define a opacidade inicial*/
+}
+button:active {
+    transition: none;/*Remove a transição*/
+    background-color: #45a049;
+}
+
+/* Define o estilo para a área de texto */
+textarea {
+    width: 100%; /* Define a largura para preencher todo o espaço disponível */
+    padding: 10px; /* Adiciona preenchimento interno */
+    margin-bottom: 25px; /* Adiciona espaço inferior */
+    border: 2px solid #ccc; /* Adiciona uma borda */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    box-sizing: border-box; /* Mantém a largura e altura incluindo a borda e o preenchimento */
+    background-color: transparent; /* Define um fundo transparente */
+    color: #333; /* Define a cor do texto */
+    font-size: 16px; /* Define o tamanho da fonte */
+    resize: none; /* Impede a redimensionamento */
+    outline: none; /* Remove o contorno ao focar */
+}
+/* Define o estilo para os títulos "Login" e "Registro" */
+
+/* Define o estilo para o container de mensagens */
+.message-container {
+    position: fixed; /* Define a posição fixa */
+    bottom: 50px; /* Define a distância do fundo */
+    left: 50%; /* Define a distância da esquerda */
+    transform: translateX(-50%); /* Centraliza horizontalmente o container */
+}
+
+/* Define o estilo para a mensagem */
+.message {
+    display: none; /* Oculta a mensagem */
+    background-color: #008000; /* Define a cor de fundo da mensagem */
+    color: #fff; /* Define a cor do texto da mensagem */
+    padding: 10px 20px; /* Adiciona preenchimento à mensagem */
+    border-radius: 8px; /* Adiciona bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+}
+
+/* Define a animação para mostrar a mensagem */
+.fadeIn {
+    animation: slideUp 3s ease forwards;
+}
+
+/* Define a animação para esconder a mensagem */
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+}
+
+/* Define a animação para esconder a mensagem */
+.fadeOut {
+    animation: fadeOut 5s forwards;
+}
+
+/* Define a animação para esconder a mensagem */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+body {
+    overflow: hidden;/*Para retirar barra de rolagem*/
+}
+
+
+
+  /*body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+  }
+  
+  #video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .message-container {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .message {
+    background-color: #008000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }*/
+  
+  
+  
+  
+  

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link href="formulario.css" type="text/css" rel="stylesheet"/><!--NUNCA MUDE A ORDEM, SEMPRE DA ERRO-->
+</head>
+
+<body>
+    <div class="container">
+        <h2>Cadastro de Conta</h2>
+        <form id="signup-form" action="catalogoAnimes.html" method="POST">
+            <div id="step1">
+                <label for="username">Como quer ser chamado:</label><br>
+                <input type="text" id="username" name="username" required><br>
+            </div>
+            <div id="step2" style="display: none;">
+                <label for="email">Seu e-mail:</label><br>
+                <input type="email" id="email" name="email" required><br>
+            </div>
+            <div id="step3" style="display: none;">
+                <label for="password">Crie uma senha:</label><br>
+                <input type="password" id="password" name="password" required><br>
+            </div>
+            <div id="step4" style="display: none;">
+                <label for="confirm_password">Confirme a senha:</label><br>
+                <input type="password" id="confirm_password" name="confirm_password" required><br>
+            </div>
+            <button id="next-btn" onclick="nextStep()">Próximo</button>
+            <button id="signup-btn" style="display: none;">Criar conta</button>
+        </form>
+        <div id="error-message" class="error-message" style="display: none;">Preencha todos os campos corretamente.</div>
+    </div>
+    <!-- Pop-up para idade menor que 12 anos -->
+    <div id="age-popup" class="age-popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <p>Você precisa ter mais de 12 anos para se cadastrar.</p>
+            <button onclick="returnToLogin()">OK</button>
+        </div>
+    </div>
+    <script src="FormularioRegistro.js"></script>
+</body>
+</html>

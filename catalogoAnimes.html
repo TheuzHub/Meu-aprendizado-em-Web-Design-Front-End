@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <link href="catalogoAnimes.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Catálogo</h1>
+        <a href="LoginPageAnime.html">Desconectar</a>
+    </header>
+    <main>
+        <div class="card" id="card1" onmouseover="addHoverClass(this)" onmouseout="removeHoverClass(this)">
+            <div class="side front">
+                <h2>Naruto</h2>
+            </div>
+            <div class="side back">
+                <p>Naruto (ナルト) é uma série de mangá escrita e ilustrada por Masashi Kishimoto, que conta a história de Naruto Uzumaki, um jovem ninja que constantemente procura por reconhecimento e sonha em se tornar Hokage, o ninja líder de sua vila.</p>
+            </div>
+        </div>
+
+        <div class="card" id="card2" onmouseover="addHoverClass(this)" onmouseout="removeHoverClass(this)">
+            <div class="side front">
+                <h2>One Piece</h2>
+            </div>
+            <div class="side back">
+                <p>A trama segue Monkey D. Luffy, um jovem que tem a ambição de se tornar o Rei dos Piratas - aquele que consegue todas as coisas do mundo. Para isso, ele precisa encontrar o One Piece, o tesouro lendário deixado por Gol D. Roger, primeiro rei da pirataria.</p>
+            </div>
+        </div>
+       
+        <div class="card" id="card3" onmouseover="addHoverClass(this)" onmouseout="removeHoverClass(this)">
+            <div class="side front">
+                <h2>Bleach</h2>
+            </div>
+            <div class="side back">
+                <p>Ichigo Kurosaki é um estudante de ensino médio incomum: desde pequeno, ele consegue ver fantasmas. Sua vida muda completamente quando ele e suas duas irmãs são atacados por um espírito maligno e recebem ajuda de uma shinigami, chamada Rukia Kuchiki.</p>
+            </div>
+        </div>
+       
+        <!-- Adicione quantos cards desejar -->
+    </main>
+    <script src="catalogoAnimes.js"></script>
+</body>
+
+</html>

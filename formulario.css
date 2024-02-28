@@ -1,0 +1,90 @@
+body {
+    background-color: #585757;
+    background-image: url('login4.jpg'); /* Adiciona a imagem de background */
+    background-size: cover; /* Redimensiona a imagem para cobrir todo o fundo */
+    background-position: center; /* Centraliza a imagem no fundo */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+}
+
+/* Estilo para o formulário de registro */
+.container {
+    width: 600px;
+    margin: 0 auto; /* Centraliza o container na tela */
+    padding: 280px;
+    text-align: center; /* Centraliza o conteúdo do container */
+    
+    background-size: cover; /* Garante que a imagem cubra todo o container */
+    opacity: 0.8; /* Define a opacidade do container para mostrar a imagem de fundo */
+}
+
+h2 {
+    color: #fff; /* Cor do texto */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border: none;
+    border-radius: 25px;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #333; /* Cor de fundo com opacidade */
+}
+label {
+    color: #fff;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Adiciona uma transição suave */
+}
+
+button:hover {
+    background-color: #45a049; /* Altera a cor de fundo ao passar o mouse */
+}
+
+/* Estilo para a mensagem de erro */
+#error-message {
+    display: none;
+    color: #f00;
+    margin-top: 10px;
+}
+
+/* Estilo para o pop-up de idade menor que 12 anos */
+.age-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo semi-transparente */
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
